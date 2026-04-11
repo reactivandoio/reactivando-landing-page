@@ -108,7 +108,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
            {/* IMAGE BACKGROUND */}
            {slide.image && (
              <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-               <img src={slide.image} alt={slide.title} className="w-full h-full object-cover object-left-top opacity-80 mix-blend-luminosity md:w-3/4 md:mr-auto" />
+               <img src={slide.image} alt={slide.title} className="w-full h-full object-cover object-left-top opacity-80 md:w-3/4 md:mr-auto" />
                <div className="absolute inset-0 bg-gradient-to-r from-background/10 via-background/60 to-background" />
                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
              </div>
@@ -128,6 +128,15 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
               <blockquote className="text-3xl md:text-5xl font-medium leading-relaxed text-on_surface border-r-4 border-tertiary pr-6 md:pr-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                  "{slide.speech}"
               </blockquote>
+
+              {slide.qrCode && (
+              <div className="mt-12 flex flex-col items-end gap-3 animate-in fade-in zoom-in duration-700 delay-300">
+                <span className="text-sm font-bold uppercase tracking-widest text-primary">{slide.qrCode.label}</span>
+                <div className="p-4 bg-white rounded-2xl shadow-ambient">
+                  <img src={slide.qrCode.url} alt="QR Code" className="w-48 h-48 sm:w-64 sm:h-64 object-contain" />
+                </div>
+              </div>
+              )}
            </div>
         </div>
       ) : slide.type === 'closing' ? (
@@ -182,6 +191,15 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                        </ul>
                    </div>
                </div>
+
+               {slide.qrCode && (
+               <div className="mt-12 flex flex-col items-center gap-4 animate-in fade-in zoom-in duration-700 delay-300">
+                 <span className="text-lg font-bold uppercase tracking-widest text-primary bg-primary/10 px-6 py-2 rounded-full">{slide.qrCode.label}</span>
+                 <div className="p-4 bg-white rounded-3xl shadow-ambient border-4 border-white/20">
+                   <img src={slide.qrCode.url} alt="QR Code" className="w-56 h-56 md:w-80 md:h-80 object-contain" />
+                 </div>
+               </div>
+               )}
 
                <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium mt-12 text-primary drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] border-b-[4px] border-tertiary inline-block pb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-[3500ms] fill-mode-both">
                    "{slide.finalQuote}"
@@ -250,6 +268,18 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                       <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                       <span className="text-xs uppercase tracking-widest text-primary font-bold block mb-2">Aprendizado Chave</span>
                       <p className="font-semibold text-lg">{slide.learning}</p>
+                  </div>
+                  )}
+
+                  {slide.qrCode && (
+                  <div className="mt-8 flex flex-row items-center gap-6 bg-surface_container_low/50 backdrop-blur-md p-6 rounded-3xl border border-outline/10">
+                    <div className="p-3 bg-white rounded-2xl shadow-sm shrink-0">
+                      <img src={slide.qrCode.url} alt="QR Code" className="w-32 h-32 md:w-48 md:h-48 object-contain" />
+                    </div>
+                    <div>
+                      <span className="text-sm font-bold uppercase tracking-widest text-tertiary mb-2 block">Acesse agora</span>
+                      <p className="text-xl md:text-2xl font-semibold text-on_surface">{slide.qrCode.label}</p>
+                    </div>
                   </div>
                   )}
               </div>

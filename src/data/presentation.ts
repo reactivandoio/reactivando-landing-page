@@ -35,6 +35,10 @@ export type PresentationSlide = {
   finalQuote?: string;
 
   presentationHint?: string | any;
+  qrCode?: {
+    url: string;
+    label?: string;
+  };
 };
 
 export const timelineSlides: PresentationSlide[] = [
@@ -741,6 +745,81 @@ export const oMitoMobileConclusion = {
   cta: "Domine o mobile, domine o mercado."
 };
 
+export const eventosComunidadeSlides: PresentationSlide[] = [
+  {
+    id: 0,
+    type: 'intro',
+    image: '/meetup-16-04.jpeg',
+    title: "16/04: Meetup Reactivando",
+    period: "Hub Goiás",
+    context: {
+      university: "Goiânia",
+      work: "Reactivando",
+      project: "Meetup"
+    },
+    speech: "O ecossistema não para, o Reactivando também não. Junte-se a nós presencialmente no Hub Goiás e vamos fortalecer a nossa comunidade.",
+    bullets: [
+      "Hub Goiás - Goiânia",
+      "Vagas limitadas",
+      "Network presencial"
+    ],
+    keyword: "MEETUP GYN",
+    qrCode: {
+      url: "https://api.qrserver.com/v1/create-qr-code/?size=500x500&color=255-255-255&bgcolor=0-0-0&data=https://hubcommunity.io/events/reactivando-meetup-16",
+      label: "Acesse para se inscrever!"
+    }
+  },
+  {
+    id: 1,
+    image: '/startup_weekend_bg.png',
+    title: "1, 2 e 3/Maio: Startup Weekend",
+    period: "Anápolis",
+    context: {
+      university: "Startup Weekend",
+      work: "54 Horas",
+      project: "Anápolis"
+    },
+    speech: "54 horas de imersão total para criar uma startup. Valide ideias, trabalhe com pessoas incríveis e lance sua solução.",
+    bullets: [
+      "Startup Weekend em Anápolis",
+      "Dias 1, 2 e 3 de Maio",
+      "Use nosso cupom exclusivo: CAPITALTECH"
+    ],
+    keyword: "SW ANÁPOLIS",
+    qrCode: {
+      url: "https://api.qrserver.com/v1/create-qr-code/?size=500x500&color=255-255-255&bgcolor=0-0-0&data=https://startupweekendanapolis.com.br",
+      label: "Cupom: CAPITALTECH"
+    }
+  },
+  {
+    id: 2,
+    image: '/og-image.jpg',
+    title: "Comunidade Reactivando",
+    period: "Expansão para BSB",
+    context: {
+      university: "WhatsApp",
+      work: "Reactivando",
+      project: "Brasília"
+    },
+    speech: "Já temos um grupo forte de BSB se formando na comunidade. Nossa meta: bater 100 membros no grupo do DF e organizar o primeiro Meetup oficial em Brasília!",
+    bullets: [
+      "Escaneie o código para entrar",
+      "Conecte-se com devs de Brasília",
+      "Ajude a organizar nosso meetup presencial"
+    ],
+    keyword: "COMUNIDADE VIVA",
+    qrCode: {
+      url: "https://api.qrserver.com/v1/create-qr-code/?size=500x500&color=255-255-255&bgcolor=0-0-0&data=https://whatsapp.reactivando.io",
+      label: "Faça Parte do Grupo!"
+    }
+  }
+];
+
+export const eventosComunidadeConclusion = {
+  quote: "Desenvolver sozinho é bom. Evoluir em comunidade é inevitável.",
+  cta: "Nos vemos no próximo evento."
+};
+
 export const presentationsRegistry: Record<string, { title: string, description: string, thumbnail?: string, slides: PresentationSlide[], conclusion: any }> = {
   "minha-jornada": {
     title: "De Desenvolvedor a Founder",
@@ -762,6 +841,13 @@ export const presentationsRegistry: Record<string, { title: string, description:
     thumbnail: "/pedro.JPG",
     slides: oMitoMobileSlides,
     conclusion: oMitoMobileConclusion
+  },
+  "eventos-comunidade": {
+    title: "Próximos Eventos da Comunidade",
+    description: "Confira os próximos grandes eventos e encontros presenciais envolvendo a comunidade Reactivando e nossos parceiros.",
+    thumbnail: "/meetup-16-04.jpeg",
+    slides: eventosComunidadeSlides,
+    conclusion: eventosComunidadeConclusion
   }
 };
 
