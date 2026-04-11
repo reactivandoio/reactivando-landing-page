@@ -15,9 +15,9 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
       // Ignore key events if user is typing in an input (though unlikely in a presentation)
       if (['INPUT', 'TEXTAREA'].includes((e.target as HTMLElement).tagName)) return;
 
-      if (e.key === "ArrowRight" || e.key === " ") {
+      if (["ArrowRight", " ", "PageDown", "ArrowDown", "Enter"].includes(e.key)) {
         setCurrentSlide(prev => Math.min(slides.length, prev + 1));
-      } else if (e.key === "ArrowLeft") {
+      } else if (["ArrowLeft", "PageUp", "ArrowUp", "Backspace"].includes(e.key)) {
         setCurrentSlide(prev => Math.max(0, prev - 1));
       } else if (e.key.toLowerCase() === "f") {
         toggleFullScreen();
@@ -118,14 +118,14 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
               <h1 className="text-5xl md:text-8xl font-display font-extrabold tracking-tight mb-8 drop-shadow-2xl">{slide.title}</h1>
               
               {slide.context && (
-              <div className="flex flex-wrap gap-3 justify-end mb-16 max-w-xl">
-                {slide.context.university && <span className="px-4 py-2 bg-primary/20 text-primary border border-primary/30 rounded-full font-mono text-xs md:text-sm">{slide.context.university}</span>}
-                {slide.context.work && <span className="px-4 py-2 bg-tertiary/20 text-tertiary border border-tertiary/30 rounded-full font-mono text-xs md:text-sm">{slide.context.work}</span>}
-                {slide.context.project && <span className="px-4 py-2 bg-white/10 text-white border border-white/20 rounded-full font-mono text-xs md:text-sm font-bold">{slide.context.project}</span>}
+              <div className="flex flex-wrap gap-4 md:gap-6 justify-end mb-16 max-w-2xl">
+                {slide.context.university && <span className="px-4 py-2 md:px-6 md:py-3 bg-primary/20 text-primary border border-primary/30 rounded-full font-mono text-sm md:text-xl">{slide.context.university}</span>}
+                {slide.context.work && <span className="px-4 py-2 md:px-6 md:py-3 bg-tertiary/20 text-tertiary border border-tertiary/30 rounded-full font-mono text-sm md:text-xl">{slide.context.work}</span>}
+                {slide.context.project && <span className="px-4 py-2 md:px-6 md:py-3 bg-white/10 text-white border border-white/20 rounded-full font-mono text-sm md:text-xl font-bold">{slide.context.project}</span>}
               </div>
               )}
 
-              <blockquote className="text-3xl md:text-5xl font-light italic leading-relaxed text-secondary/90 border-r-4 border-primary pr-6 md:pr-10 drop-shadow-lg">
+              <blockquote className="text-3xl md:text-5xl font-medium leading-relaxed text-on_surface border-r-4 border-tertiary pr-6 md:pr-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                  "{slide.speech}"
               </blockquote>
            </div>
@@ -139,41 +139,43 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
              </div>
            )}
 
-           <div className="w-full max-w-6xl mx-auto flex flex-col items-center relative z-10 text-center">
-               <div className="flex items-center gap-3 bg-primary/10 text-primary px-4 py-1.5 rounded-full font-mono text-xs md:text-sm font-bold border border-primary/20 mb-4 animate-in fade-in slide-in-from-top-4 duration-700">
+           <div className="w-full max-w-7xl mx-auto flex flex-col items-center relative z-10 text-center">
+               <div className="flex items-center gap-4 bg-primary/10 text-primary px-6 py-2 md:px-8 md:py-3 rounded-full font-mono text-sm md:text-xl font-bold border border-primary/20 mb-6 animate-in fade-in slide-in-from-top-4 duration-700">
                    {slide.period} <span className="opacity-50">—</span> {slide.highlight}
                </div>
 
-               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-extrabold tracking-tight mb-4 max-w-4xl leading-tight animate-in fade-in zoom-in-95 duration-1000 delay-300 fill-mode-both">
+               <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tight mb-6 max-w-5xl leading-tight animate-in fade-in zoom-in-95 duration-1000 delay-300 fill-mode-both">
                    {slide.content?.headline}
                </h1>
                
-               <p className="text-lg md:text-xl text-secondary_fixed mb-8 max-w-3xl leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both">
+               <p className="text-xl md:text-3xl lg:text-4xl text-on_surface mb-10 max-w-5xl leading-relaxed font-medium animate-in fade-in slide-in-from-bottom-4 duration-700 delay-500 fill-mode-both drop-shadow-md">
                    {slide.content?.story}
                </p>
 
-               <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full mb-8">
+               {slide.content?.numbers && slide.content.numbers.length > 0 && (
+               <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full mb-10">
                    {slide.content?.numbers?.map((num, idx) => (
-                       <div key={idx} className="bg-surface_container_lowest/60 backdrop-blur-md p-4 md:p-5 rounded-2xl border border-outline_variant/10 text-left animate-in fade-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: `${1000 + (idx * 300)}ms`, animationFillMode: 'both' }}>
-                           <span className="block text-xs uppercase tracking-widest text-primary font-bold mb-1">{num.label}</span>
-                           <span className="block text-2xl md:text-3xl font-display font-extrabold text-on_surface mb-1">{num.value}</span>
-                           <span className="block text-xs md:text-sm text-on_surface_variant leading-tight">{num.description}</span>
+                       <div key={idx} className="bg-surface_container_lowest/60 backdrop-blur-md p-6 rounded-2xl border border-outline_variant/10 text-left animate-in fade-in slide-in-from-bottom-4 duration-500" style={{ animationDelay: `${1000 + (idx * 300)}ms`, animationFillMode: 'both' }}>
+                           <span className="block text-sm md:text-base uppercase tracking-widest text-primary font-bold mb-2">{num.label}</span>
+                           <span className="block text-3xl md:text-5xl font-display font-extrabold text-on_surface mb-2">{num.value}</span>
+                           <span className="block text-sm md:text-lg text-on_surface_variant leading-tight font-medium">{num.description}</span>
                        </div>
                    ))}
                </div>
+               )}
 
-               <div className="flex flex-col md:flex-row gap-6 w-full text-left bg-surface/30 backdrop-blur-md p-5 md:p-6 rounded-3xl border border-outline/10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-[2500ms] fill-mode-both">
-                   <div className="flex-1 md:pr-4">
-                       <span className="text-[10px] uppercase tracking-widest text-tertiary font-bold block mb-2">O Novo Jogo</span>
-                       <p className="text-lg font-bold mb-2 leading-snug">{slide.content?.insight}</p>
-                       <p className="text-sm text-secondary_fixed leading-relaxed">{slide.content?.nextStep}</p>
+               <div className="flex flex-col md:flex-row gap-8 w-full text-left bg-surface/30 backdrop-blur-md p-6 md:p-10 rounded-3xl border border-outline/10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-[2500ms] fill-mode-both">
+                   <div className="flex-1 md:pr-6">
+                       <span className="text-xs md:text-sm uppercase tracking-widest text-tertiary font-bold block mb-4">O Novo Jogo</span>
+                       <p className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 leading-snug text-on_surface">{slide.content?.insight}</p>
+                       <p className="text-lg md:text-xl lg:text-2xl text-on_surface_variant font-medium leading-relaxed">{slide.content?.nextStep}</p>
                    </div>
-                   <div className="flex-1 border-t md:border-t-0 md:border-l border-outline_variant/20 pt-4 md:pt-0 md:pl-6">
-                       <span className="text-[10px] uppercase tracking-widest text-primary font-bold block mb-2">Lições da Transição</span>
-                       <ul className="space-y-2">
+                   <div className="flex-1 border-t md:border-t-0 md:border-l border-outline_variant/20 pt-6 md:pt-0 md:pl-8">
+                       <span className="text-xs md:text-sm uppercase tracking-widest text-primary font-bold block mb-4">Lições da Transição</span>
+                       <ul className="space-y-4 md:space-y-6">
                            {slide.lessons?.map((lesson, idx) => (
-                               <li key={idx} className="flex items-start gap-2 text-sm md:text-base font-semibold">
-                                   <span className="material-symbols-outlined text-primary text-base mt-0.5">bolt</span>
+                               <li key={idx} className="flex items-start gap-4 text-lg md:text-2xl font-semibold text-on_surface/90">
+                                   <span className="material-symbols-outlined text-primary text-2xl md:text-3xl mt-0.5 scale-110">bolt</span>
                                    <span className="leading-tight">{lesson}</span>
                                </li>
                            ))}
@@ -181,7 +183,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                    </div>
                </div>
 
-               <h2 className="text-2xl md:text-3xl font-light italic mt-8 text-primary drop-shadow-xl border-b-[3px] border-tertiary inline-block pb-2 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-[3500ms] fill-mode-both">
+               <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium mt-12 text-primary drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] border-b-[4px] border-tertiary inline-block pb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-[3500ms] fill-mode-both">
                    "{slide.finalQuote}"
                </h2>
            </div>
@@ -209,18 +211,18 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                   </h1>
 
                   {slide.context && (
-                  <div className="space-y-4 pt-6 border-t border-outline_variant/10">
+                  <div className="space-y-6 pt-8 border-t border-outline_variant/10">
                       <div>
-                          <span className="text-[10px] uppercase tracking-widest text-secondary/50 font-bold block mb-1">Academia</span>
-                          <p className="text-sm border-l-2 border-tertiary pl-3 text-secondary_fixed">{slide.context.university || "-"}</p>
+                          <span className="text-xs md:text-sm uppercase tracking-widest text-secondary/50 font-bold block mb-2">Academia</span>
+                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-tertiary pl-4 text-secondary_fixed">{slide.context.university || "-"}</p>
                       </div>
                       <div>
-                          <span className="text-[10px] uppercase tracking-widest text-secondary/50 font-bold block mb-1">Trabalho</span>
-                          <p className="text-sm border-l-2 border-primary pl-3 text-secondary_fixed">{slide.context.work || "-"}</p>
+                          <span className="text-xs md:text-sm uppercase tracking-widest text-secondary/50 font-bold block mb-2">Trabalho</span>
+                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-primary pl-4 text-secondary_fixed">{slide.context.work || "-"}</p>
                       </div>
                       <div>
-                          <span className="text-[10px] uppercase tracking-widest text-secondary/50 font-bold block mb-1">Projetos</span>
-                          <p className="text-sm border-l-2 border-white pl-3 text-on_surface font-semibold">{slide.context.project || "-"}</p>
+                          <span className="text-xs md:text-sm uppercase tracking-widest text-secondary/50 font-bold block mb-2">Projetos</span>
+                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-white pl-4 text-on_surface font-semibold">{slide.context.project || "-"}</p>
                       </div>
                   </div>
                   )}
@@ -228,16 +230,16 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
 
               {/* Right side: Story & Bullets */}
               <div className="w-full md:w-2/3 flex flex-col justify-center space-y-12">
-                  <blockquote className="text-2xl md:text-4xl font-light italic leading-relaxed text-secondary/90 border-l-4 border-primary pl-6 md:pl-10">
+                  <blockquote className="text-2xl md:text-4xl lg:text-5xl font-medium leading-tight text-on_surface border-l-4 border-tertiary pl-6 md:pl-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                       "{slide.speech}"
                   </blockquote>
 
                   {slide.bullets && slide.bullets.length > 0 && (
-                  <ul className="space-y-4 text-base md:text-xl font-sans text-on_surface_variant">
+                  <ul className="space-y-6 md:space-y-8 text-lg md:text-2xl lg:text-3xl font-sans text-on_surface/90 font-medium drop-shadow-md">
                       {slide.bullets.map((bullet, idx) => (
                           <li key={idx} className="flex items-start gap-4">
-                              <span className="material-symbols-outlined text-tertiary mt-1">check_circle</span>
-                              <span>{bullet}</span>
+                              <span className="material-symbols-outlined text-tertiary mt-1.5 md:mt-1 lg:mt-2 scale-125">check_circle</span>
+                              <span className="tracking-wide text-white">{bullet}</span>
                           </li>
                       ))}
                   </ul>
@@ -255,6 +257,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
         </div>
       )}
 
+      {slide.type !== 'closing' && (
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-6 z-50 text-secondary bg-surface_container_highest/80 backdrop-blur-xl px-6 py-3 rounded-full border border-outline_variant/20 shadow-ambient">
           <button onClick={handlePrev} disabled={currentSlide === 0} className="hover:text-primary transition-colors disabled:opacity-30 flex items-center justify-center">
               <span className="material-symbols-outlined">chevron_left</span>
@@ -266,6 +269,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
               <span className="material-symbols-outlined">chevron_right</span>
           </button>
       </div>
+      )}
 
       {/* Progress Bar */}
       <div className="absolute bottom-0 left-0 h-1 bg-surface_container_highest w-full z-50">

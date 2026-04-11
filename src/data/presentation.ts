@@ -579,6 +579,168 @@ export const siteEm30MinutosConclusion = {
   cta: "Chegou a hora de executar."
 };
 
+export const oMitoMobileSlides: PresentationSlide[] = [
+  {
+    id: 0,
+    type: 'intro',
+    image: '/pedro.JPG',
+    title: "O Tamanho do Mercado Mobile",
+    period: "A Mosca Branca",
+    context: {
+      university: "Mais Demanda",
+      work: "Menos Oferta",
+      project: "Alta Retenção"
+    },
+    speech: "Enquanto muita gente migrou pra web ou dados, o mobile ficou com um gap enorme de profissionais qualificados. Não falta vaga. Falta gente pronta.",
+    bullets: [
+      "Mobile não morreu — ele estabilizou com alta demanda",
+      "Empresas precisam de apps novos, manutenção, performance e escala",
+      "React Native / Flutter: Alta demanda, pouca oferta qualificada",
+      "Swift (iOS): Mercado premium (EUA e fintechs)",
+      "Kotlin (Android): Gigantes e modernização de legado"
+    ],
+    keyword: "A MOSCA BRANCA",
+    presentationHint: "Impacto visual forte com o punchline escrito: 'Não falta vaga. Falta gente pronta.'"
+  },
+  {
+    id: 1,
+    image: '/presentation/slide-1.jpg',
+    title: "O Que Todo Dev Mobile Precisa Saber",
+    period: "O Mínimo Esperado",
+    speech: "Se você não domina arquitetura, você não é pleno — você é um júnior que sabe framework.",
+    bullets: [
+      "Não é sobre framework, é sobre fundamentos",
+      "Arquitetura: Separação de responsabilidades e código escalável",
+      "React Native: MVVM e Clean Architecture",
+      "Android: MVVM (ViewModel + Flow/LiveData)",
+      "iOS: MVC evoluindo pra MVVM ou VIPER"
+    ],
+    keyword: "FUNDAMENTOS",
+    presentationHint: "Contraste nítido de quem foca em framework VS engenheiro que foca em fundamentos."
+  },
+  {
+    id: 2,
+    image: '/presentation/slide-2.jpg',
+    title: "Integração e Resiliência",
+    period: "Offline-First",
+    speech: "Saber consumir API não é saber integrar. App bom não é o que funciona — é o que continua funcionando quando a API falha.",
+    bullets: [
+      "Saber consumir API ≠ saber integrar",
+      "BFF (Backend for Frontend)",
+      "Tratamento de erros e Retry policies",
+      "Offline-first é o diferencial gigante",
+      "Manejo local de cache inteligente"
+    ],
+    keyword: "RESILIÊNCIA",
+    presentationHint: "Apresentar app que funciona mesmo com a internet caindo. Foco visual em estabilidade."
+  },
+  {
+    id: 3,
+    image: '/presentation/slide-3.jpg',
+    title: "O Grande Diferencial",
+    period: "Publicação",
+    speech: "Quem sabe publicar, trabalha. Quem não sabe, depende dos outros. 80% dos devs mobile NÃO sabem publicar um app sozinhos.",
+    bullets: [
+      "80% dos devs mobile sentem medo de publicar o app",
+      "Android (Play Store): Build, versionamento, signing",
+      "Google Play Console: Domínio de esteira de release",
+      "iOS (App Store): Certificados e Provisioning profiles",
+      "TestFlight e validações da Apple"
+    ],
+    keyword: "INDEPENDÊNCIA",
+    presentationHint: "Dar foco alarmante no número de '80% não sabem publicar'."
+  },
+  {
+    id: 4,
+    image: '/presentation/slide-4.jpg',
+    title: "React Native: O Jogo Mudou",
+    period: "A Maturidade Adquirida",
+    speech: "React Native deixou de ser gambiarra faz tempo.",
+    bullets: [
+      "React Native hoje é MUITO mais maduro do que a galera imagina",
+      "Nova arquitetura (Fabric + TurboModules)",
+      "Performance MUITO melhor e em par com o nativo",
+      "Melhor e mais fina integração com libs nativas"
+    ],
+    keyword: "MATURIDADE",
+    presentationHint: "Frase de impacto central: 'React Native deixou de ser gambiarra faz tempo.'"
+  },
+  {
+    id: 5,
+    image: '/presentation/slide-5.jpg',
+    title: "A Stack do Desenvolvedor Completo",
+    period: "O Diferencial Técnico",
+    speech: "Hoje, começar sem Expo é começar errado.",
+    bullets: [
+      "Expo virou o ecossistema padrão da indústria cross-platform",
+      "OTA (Over The Air): Atualização sem passar pela loja",
+      "CI/CD com Fastlane para deploy com 1 comando",
+      "Firebase (Crashlytics, Analytics, Remote Config)",
+      "NativeWind: O Tailwind e 'Vibe Coding' no Mobile"
+    ],
+    keyword: "O ARSENAL MOBILE",
+    presentationHint: "Passar logo por logo bem rápido. Expo, Fastlane, Firebase, NativeWind."
+  },
+  {
+    id: 6,
+    image: '/presentation/slide-6.jpg',
+    title: "A Grande Oportunidade Oculta",
+    period: "O Cenário Atual",
+    speech: "Com muita gente migrando pra web ou IA no topo do hype, o mercado mobile filtrou o nível e sobrou espaço no topo.",
+    bullets: [
+      "O mercado exige ciclo completo, mas poucos entregam",
+      "Déficit gigante de engenheiros que dominam os fundamentos",
+      "Autonomia real: hoje um dev solo cria, publica e escala",
+      "A era da 'Fabricite': empresas adotando a nova arquitetura"
+    ],
+    keyword: "OPORTUNIDADE",
+    presentationHint: "Focar em como muitos ignoram o óbvio e o dinheiro fica na mesa."
+  },
+  {
+    id: 7,
+    image: '/presentation/slide-7.jpg',
+    title: "As Novas Regras do Jogo",
+    period: "A Transição",
+    speech: "Se você quer entrar na tecnologia hoje, mobile ainda é o caminho mais rápido para crescer. Mas apenas para quem sai do básico.",
+    bullets: [
+      "Saia da caixa de ferramentas inútil",
+      "Foque intensamente nos fundamentos definitivos",
+      "Offline-first e deploy separam devs de engenheiros",
+      "Quem entra hoje dominando isso, é contratado amanha"
+    ],
+    keyword: "O JOGO",
+    presentationHint: "Encorajar quem está começando e provocar quem está estagnado."
+  },
+  {
+    id: 8,
+    type: 'closing',
+    image: '/presentation/slide-8.jpg',
+    title: "Crie, Publique, Escale Sozinho",
+    period: "A Grande Vantagem",
+    highlight: "Sair do Básico",
+    content: {
+      headline: "O caminho mais rápido para a independência tech.",
+      story: "A janela de oportunidade está aberta, mas ela exige competência técnica de ponta a ponta. Seja a pessoa que constrói e coloca na loja, não apenas quem estiliza telas.",
+      insight: "Domine o processo inteiro.",
+      nextStep: "De ideação ao deploy, de júnior focado em framework a engenheiro sólido de mobile.",
+      numbers: []
+    },
+    lessons: [
+      "Integração ponta a ponta é o novo padrão",
+      "A automação tirou do seu caminho as desculpas antigas"
+    ],
+    finalQuote: "Hoje você consegue criar, publicar e escalar um app sozinho — coisa que há 5 anos era impossível.",
+    keyword: "INDEPENDÊNCIA",
+    presentationHint: "Deixar o impacto da frase final e pausar."
+  }
+];
+
+export const oMitoMobileConclusion = {
+  image: '/presentation/conclusion.jpg',
+  quote: "Hoje você consegue criar, publicar e escalar um app sozinho — coisa que há 5 anos era impossível.",
+  cta: "Domine o mobile, domine o mercado."
+};
+
 export const presentationsRegistry: Record<string, { title: string, description: string, thumbnail?: string, slides: PresentationSlide[], conclusion: any }> = {
   "minha-jornada": {
     title: "De Desenvolvedor a Founder",
@@ -593,6 +755,13 @@ export const presentationsRegistry: Record<string, { title: string, description:
     thumbnail: "/thumb-super-site.jpeg",
     slides: siteEm30MinutosSlides,
     conclusion: siteEm30MinutosConclusion
+  },
+  "o-mito-mobile": {
+    title: "A Mosca Branca: O Mercado Mobile Oculto",
+    description: "Por que desenvolvedores mobile completos ditam as regras, saltam pra vagas globais e escalam apps sozinhos — e o que você precisa fazer para se tornar um deles.",
+    thumbnail: "/pedro.JPG",
+    slides: oMitoMobileSlides,
+    conclusion: oMitoMobileConclusion
   }
 };
 
