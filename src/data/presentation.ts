@@ -23,9 +23,9 @@ export type PresentationSlide = {
   content?: {
     headline: string;
     story: string;
-    insight: string;
-    nextStep: string;
-    numbers: Array<{
+    insight?: string;
+    nextStep?: string;
+    numbers?: Array<{
       label: string;
       value: string;
       description: string;

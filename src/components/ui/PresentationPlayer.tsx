@@ -181,7 +181,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                </div>
                )}
 
-               { (slide.content?.insight || (slide.lessons && slide.lessons.length > 0)) && (
+               { (slide.content?.insight || (slide.lessons && slide.lessons.length > 0)) ? (
                <div className="flex flex-col md:flex-row gap-8 w-full text-left bg-surface/30 backdrop-blur-md p-6 md:p-10 rounded-3xl border border-outline/10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-[2500ms] fill-mode-both">
                    <div className="flex-1 md:pr-6">
                        <span className="text-xs md:text-sm uppercase tracking-widest text-tertiary font-bold block mb-4">O Novo Jogo</span>
@@ -200,7 +200,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                        </ul>
                    </div>
                </div>
-               )}
+               ) : null}
 
                {slide.qrCode && (
                <div className="mt-12 flex flex-col items-center gap-4 animate-in fade-in zoom-in duration-700 delay-300">
