@@ -39,6 +39,7 @@ export type PresentationSlide = {
     url: string;
     label?: string;
   };
+  social?: string;
 };
 
 export const timelineSlides: PresentationSlide[] = [
@@ -53,6 +54,7 @@ export const timelineSlides: PresentationSlide[] = [
       work: "Líder de Comunidade",
       project: "Fundador do Pix Aí"
     },
+    social: "Instagram/LinkedIn/GitHub: @pedrogoiania",
     speech: "A velocidade é companheira dos resultados.",
     bullets: [],
     learning: "",
@@ -61,166 +63,46 @@ export const timelineSlides: PresentationSlide[] = [
   },
   {
     id: 1,
-    image: '/presentation/slide-1.jpg',
-    title: "A Faísca Inicial",
-    period: "2016",
+    image: '/presentation/slide-2.jpg',
+    title: "Da Primeira Linha de Código ao Jogo Global",
+    period: "2016–2020",
     context: {
-      university: "Início da Graduação",
-      work: "Estágios Iniciais",
-      project: "Primeiro Contato (Startup Weekend)"
+      university: "Extensão e TCC",
+      work: "Engenheiro (Gympass/SP)",
+      project: "Hackathons & Apps"
     },
-    speech: "Eu achava que tecnologia era apenas escrever código na faculdade, até que aquelas 54 horas mudaram completamente minha visão de mundo e de negócios.",
+    speech: "De 54 horas num Startup Weekend a sustentar sistemas com milhares de acessos e integrar a engenharia global de unicórnios, o código deixou de ser brincadeira e virou responsabilidade real.",
     bullets: [
-      "54 horas de imersão total",
-      "Tensão no primeiro pitch",
-      "Visão de negócio vs. Código puro"
+      "Vitórias em hackathons e criação de apps do zero",
+      "O primeiro gargalo sério de infraestrutura (milhares de acessos)",
+      "O choque de padrão ao integrar times globais de engenharia"
     ],
-    learning: "A tecnologia é apenas o meio; o fim real é resolver uma dor palpável.",
-    keyword: "DESCOBERTA",
-    presentationHint: "Fade-in suave a partir de um fundo escuro que se ilumina revelando a palavra 'DESCOBERTA'."
+    learning: "A melhor forma de crescer rápido é testar sob pressão real e se colocar em salas onde você seja o menor.",
+    keyword: "FUNDAÇÃO & ESCALA",
+    presentationHint: "Fade-in suave mostrando os troféus de hackathon misturados com código, revelando a palavra 'FUNDAÇÃO'."
   },
   {
     id: 2,
-    image: '/presentation/slide-2.jpg',
-    title: "Sujando as Mãos",
-    period: "2017",
+    image: '/presentation/slide-6.jpg',
+    title: "Arquitetura de Softwares vs. Arquitetura Humana",
+    period: "2020–2023",
     context: {
-      university: "Aprofundamento Técnico",
-      work: "Desenvolvedor Júnior",
-      project: "Happy Hour App & Tron"
+      university: "Visão de Produto",
+      work: "Liderança (Itaú & Nubank)",
+      project: "Startups em Paralelo"
     },
-    speech: "A inspiração não sobrevive sem transpiração. Era a hora de tirar todas aquelas ideias da cabeça, virar noite e ver o aplicativo rodar de fato na mão das pessoas.",
+    speech: "No Itaú e Nubank percebi que escalar código é mais fácil do que alinhar cultura. E no fim de semana, as táticas gigantes aceleravam meus projetos na madrugada.",
     bullets: [
-      "Criação de produtos próprios",
-      "Iteração e testes madrugada adentro",
-      "O choque com o primeiro usuário real"
+      "Gestão de escala: liderando +70 pessoas em sistemas bancários",
+      "Equilíbrio entre a operação LATAM e projetos paralelos intensos",
+      "Mudança de foco: criar o produto certo importa mais do que codar perfeito"
     ],
-    learning: "Lançar rápido e testar vale mais do que buscar uma versão 1.0 impecável e isolada.",
-    keyword: "EXECUÇÃO",
-    presentationHint: "Slide up vertical dinâmico, revelando wireframes que se transformam em apps vivos."
+    learning: "As metodologias de grandes corporações são alavancas massivas se aplicadas com a resiliência do mindset empreendedor.",
+    keyword: "VISÃO & PRODUTO",
+    presentationHint: "Split screen dinâmico: metade da tela em tom de inovação corporativa (roxo/laranja) e a outra metade escura e 'hacker'."
   },
   {
     id: 3,
-    image: '/presentation/slide-3.jpg',
-    title: "A Validar É Preciso",
-    period: "2017–2018",
-    context: {
-      university: "Projetos de Extensão",
-      work: "Tech Local",
-      project: "Hackathons (Rio Quente + Uber)"
-    },
-    speech: "Ganhar hackathons em série me ensinou que inovação não é só ter a ideia mais 'disruptiva', mas conseguir provar que ela para em pé sob intensa pressão de gigantes.",
-    bullets: [
-      "Vitórias seguidas em Hackathons",
-      "Desenvolvimento sob pressão extrema",
-      "Modelando com o padrão Uber/Grandes Players"
-    ],
-    learning: "Os gigantes compram a solução validada e clara, não apenas uma stack tecnológica moderna.",
-    keyword: "VALIDAÇÃO",
-    presentationHint: "Efeito de flash fotográfico entre as trocas, mostrando troféus ou logos corporativos em destaque."
-  },
-  {
-    id: 4,
-    image: '/presentation/slide-4.jpg',
-    title: "Sentindo o Peso do Tráfego",
-    period: "2018",
-    context: {
-      university: "Foco no TCC",
-      work: "Desenvolvedor Pleno",
-      project: "Querida Ansiedade (Status de Escala)"
-    },
-    speech: "Pela primeira vez, não era mais só uma brincadeira de fim de semana. Existiam milhares de pessoas reais que precisavam e dependiam daquele servidor em pé.",
-    bullets: [
-      "Chegada de milhares de usuários",
-      "Primeiro gargalo sério de arquitetura (infra)",
-      "Responsabilidade pelo impacto social"
-    ],
-    learning: "Escalar exige virar a chave mental de 'está funcionando' para 'como evitar que caia'.",
-    keyword: "ESCALA",
-    presentationHint: "Uma linha gráfica em background subindo abruptamente, simulando picos massivos de acesso."
-  },
-  {
-    id: 5,
-    image: '/presentation/slide-5.jpg',
-    title: "O Pulo Global",
-    period: "2019–2020",
-    context: {
-      university: "Formatura Concluída",
-      work: "Engenharia (Gympass/SP)",
-      project: "Pura Liderança Corporativa"
-    },
-    speech: "A mudança para São Paulo e o contato com a engenharia do Gympass me colocou frente a frente com o padrão global. Ou eu acompanhava, ou ficava para trás.",
-    bullets: [
-      "Impacto no epicentro de tecnologia BR (SP)",
-      "Lidar com microsserviços globais",
-      "Primeiros passos formais em liderança tech"
-    ],
-    learning: "A melhor forma de subir o próprio nível técnico é colocar-se num ambiente onde você seja o menor.",
-    keyword: "IMERSÃO",
-    presentationHint: "Zoom in profundo simulando a malha urbana metropolitana intercalada com métricas densas de código."
-  },
-  {
-    id: 6,
-    image: '/presentation/slide-6.jpg',
-    title: "A Era do Produto",
-    period: "2020–2021",
-    context: {
-      university: "Autoeducação Contínua",
-      work: "Liderança Técnica",
-      project: "Evolua (Produto Paralelo)"
-    },
-    speech: "Foi criando a Evolua que o estalo ocorreu: codar incrivelmente rápido e limpo é inútil se você estiver programando a funcionalidade errada que ninguém vai usar.",
-    bullets: [
-      "Pivotagem e visão de Produto vs Tech pura",
-      "Equilibrando os vários chapéus do projeto",
-      "Os obstáculos na métrica de retenção"
-    ],
-    learning: "Bons engenheiros criam software com eficiência; engenheiros excelentes questionam por que ele deve ser criado.",
-    keyword: "PRODUTO",
-    presentationHint: "Componentes na tela que se expandem em wireframes com setas de conversão exibindo o funil."
-  },
-  {
-    id: 7,
-    image: '/presentation/slide-7.jpg',
-    title: "Liderando a Nuvem Humana",
-    period: "2021–2022",
-    context: {
-      university: "Networking Tático",
-      work: "Manager (Itaú)",
-      project: "Gestão Escalável (+70 devs)"
-    },
-    speech: "No Itaú, eu notei que configurar clusters lógicos escaláveis era muito mais fácil do que alinhar cultura e propósito ao longo de um banco inteiro.",
-    bullets: [
-      "Gestão de escala: liderando +70 pessoas",
-      "Enraizamento e sustentabilidade cultural",
-      "Sistemas bancários super críticos"
-    ],
-    learning: "As maiores dificuldades em arquitetura não estão nos componentes técnicos, mas na comunicação da equipe.",
-    keyword: "LIDERANÇA",
-    presentationHint: "Uma teia animada de diagramas técnicos (nós cibernéticos) que se transformam em íconografia de perfis de pessoas conectadas."
-  },
-  {
-    id: 8,
-    image: '/presentation/slide-8.jpg',
-    title: "O Sangue Roxo e a Madrugada",
-    period: "2022–2023",
-    context: {
-      university: "Pesquisas Prod.",
-      work: "Nubank",
-      project: "PubChat"
-    },
-    speech: "Mesmo operando na maior engrenagem da América Latina dentro do Nubank, a vocação empreendedora criava as startups nas sextas e nos sábados.",
-    bullets: [
-      "Operações gigantes na América Latina (Nubank)",
-      "Side projects agressivos na madrugada (PubChat)",
-      "O fervilhar perpétuo do ecossistema pessoal"
-    ],
-    learning: "Disciplina e resiliência: metodologias de grandes corporações podem ser miniaturizadas para acelerar startups nos fins de semana.",
-    keyword: "EQUILÍBRIO",
-    presentationHint: "Split screen dinâmico: metade da tela em tom de inovação coorporativa (roxo) e a outra metade escura e 'hacker'."
-  },
-  {
-    id: 9,
     image: '/presentation/slide-9.jpg',
     title: "A Demanda Antecipada",
     period: "2024",
@@ -229,7 +111,7 @@ export const timelineSlides: PresentationSlide[] = [
       work: "Virada Total",
       project: "Criação do Pix Aí"
     },
-    speech: "Tudo culminou neste ano: foi preciso coragem para largar o barco seguro e focar num projeto onde o mercado demandou e pediu nossa solução até sem termos o código 100% pronto.",
+    speech: "Tudo culminou neste ano ao entender o poder de um Ativo Digital: o verdadeiro jogo não é trocar suas horas por salário escrevendo código, mas sim construir um software que roda, escala e gera receita no automático enquanto você dorme.",
     bullets: [
       "Queimando as pontes confortáveis",
       "Demanda batendo à porta no cenário pré-código",
@@ -240,7 +122,7 @@ export const timelineSlides: PresentationSlide[] = [
     presentationHint: "Efeito rápido de shake; cores mudam repentinamente simbolizando um 'All In'. Gráfico explode positivamente."
   },
   {
-    id: 10,
+    id: 4,
     image: '/presentation/slide-10.jpg',
     title: "Surge o Foguete sem Freio",
     period: "2024–2025",
@@ -260,7 +142,7 @@ export const timelineSlides: PresentationSlide[] = [
     presentationHint: "Visuais passando rapidamente e um fundo contínuo subindo sem freio, acompanhado por velocímetro."
   },
   {
-    id: 11,
+    id: 5,
     image: '/presentation/slide-11.jpg',
     title: "O Exit e a Linha de Chegada",
     period: "2025",
@@ -280,7 +162,7 @@ export const timelineSlides: PresentationSlide[] = [
     presentationHint: "Mergulho visual num flash branco que explode na tela, revelando calmamente apenas os títulos e os dados finos e claros na tela pós-explosão de impacto."
   },
   {
-    id: 12,
+    id: 6,
     image: '/presentation/slide-12.jpg',
     title: "Resumo da Ópera (Tudo Tem Começo)",
     period: "Reflexão: 2016–2025",
@@ -300,7 +182,7 @@ export const timelineSlides: PresentationSlide[] = [
     presentationHint: "Todas as datas e 'palavras-chave' do arquivo aparecem numa sequência relâmpago horizontal que recua, preenchendo toda a tela, resultando no impacto do final."
   },
   {
-    id: 13,
+    id: 7,
     image: '/presentation/slide-13.jpg',
     title: "Isso não foi o fim",
     period: "Conclusão",
@@ -309,8 +191,6 @@ export const timelineSlides: PresentationSlide[] = [
     content: {
       headline: "O exit não foi o objetivo final. Foi a transição.",
       story: "Depois de 8 anos tentando… eu finalmente fiz meu primeiro exit. Mas, pela primeira vez, eu entendi que isso era só o começo.",
-      insight: "O Pix Aí não foi o destino. Foi o veículo.",
-      nextStep: "Agora o jogo é outro: escalar com tudo que eu levei 8 anos pra aprender.",
       numbers: [
         {
           label: "Exit Pix Aí",
@@ -334,12 +214,6 @@ export const timelineSlides: PresentationSlide[] = [
         }
       ]
     },
-    lessons: [
-      "Exit não é fim — é alavanca",
-      "Equity é construção de longo prazo",
-      "Jogo muda quando você aprende a escalar"
-    ],
-    finalQuote: "Eu não estou encerrando uma jornada… eu estou começando a próxima com vantagem.",
     presentationHint: {
       animation: "fade-in + highlight numbers sequentially",
       emphasis: [
@@ -351,8 +225,34 @@ export const timelineSlides: PresentationSlide[] = [
       deliveryTips: [
         "Faça pausa antes de mostrar os números",
         "Revele cada número com timing (um por vez)",
-        "Fale mais devagar aqui — esse é o clímax",
-        "Olhe para a plateia antes da frase final"
+        "Olhe para a plateia"
+      ]
+    }
+  },
+  {
+    id: 8,
+    image: '/presentation/slide-13.jpg',
+    title: "A Vantagem da Execução",
+    period: "A Próxima Fase",
+    type: "closing",
+    highlight: "O Novo Jogo",
+    content: {
+      headline: "O Pix Aí foi o veículo.",
+      story: "Ele provou que os fundamentos são inquebráveis e pavimentou o caminho. Agora nós apostamos numa escala maior e com muito mais fundação.",
+      insight: "O seu primeiro gol credencializa o seu processo.",
+      nextStep: "Agora o jogo é escalar massivamente usando todo o ecossistema que foi gerado ao longo daqueles 8 anos iniciais."
+    },
+    lessons: [
+      "Exit não é fim — é alavanca",
+      "Equity é construção de longo prazo",
+      "O jogo muda quando você aprende a escalar o processo"
+    ],
+    finalQuote: "Eu não estou encerrando uma jornada… eu estou começando a próxima com vantagem.",
+    presentationHint: {
+      animation: "fade-in",
+      deliveryTips: [
+        "Fale mais devagar aqui — esse é o clímax da apresentação",
+        "Olhe fixamente para a plateia antes da frase final, deixe o silêncio atuar"
       ]
     }
   }

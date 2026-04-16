@@ -125,6 +125,14 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
               </div>
               )}
 
+              {slide.social && (
+              <div className="flex justify-end mb-16 mt-[-2rem] max-w-2xl">
+                 <span className="text-secondary_fixed font-mono text-base md:text-2xl font-bold flex items-center gap-3 border border-outline_variant/20 px-6 py-3 rounded-full bg-surface_container_low/30 backdrop-blur-sm shadow-sm">
+                    {slide.social}
+                 </span>
+              </div>
+              )}
+
               <blockquote className="text-3xl md:text-5xl font-medium leading-relaxed text-on_surface border-r-4 border-tertiary pr-6 md:pr-10 drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
                  "{slide.speech}"
               </blockquote>
@@ -173,6 +181,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                </div>
                )}
 
+               { (slide.content?.insight || (slide.lessons && slide.lessons.length > 0)) && (
                <div className="flex flex-col md:flex-row gap-8 w-full text-left bg-surface/30 backdrop-blur-md p-6 md:p-10 rounded-3xl border border-outline/10 animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-[2500ms] fill-mode-both">
                    <div className="flex-1 md:pr-6">
                        <span className="text-xs md:text-sm uppercase tracking-widest text-tertiary font-bold block mb-4">O Novo Jogo</span>
@@ -191,6 +200,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                        </ul>
                    </div>
                </div>
+               )}
 
                {slide.qrCode && (
                <div className="mt-12 flex flex-col items-center gap-4 animate-in fade-in zoom-in duration-700 delay-300">
@@ -201,9 +211,11 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                </div>
                )}
 
+               {slide.finalQuote && (
                <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium mt-12 text-primary drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)] border-b-[4px] border-tertiary inline-block pb-4 animate-in fade-in slide-in-from-bottom-4 duration-1000 delay-[3500ms] fill-mode-both">
                    "{slide.finalQuote}"
                </h2>
+               )}
            </div>
         </div>
       ) : (
@@ -228,22 +240,28 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
                       {slide.title}
                   </h1>
 
-                  {slide.context && (
+                  {slide.context && (slide.context.university || slide.context.work || slide.context.project) ? (
                   <div className="space-y-6 pt-8 border-t border-outline_variant/10">
+                      {slide.context.university ? (
                       <div>
                           <span className="text-xs md:text-sm uppercase tracking-widest text-secondary/50 font-bold block mb-2">Academia</span>
-                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-tertiary pl-4 text-secondary_fixed">{slide.context.university || "-"}</p>
+                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-tertiary pl-4 text-secondary_fixed">{slide.context.university}</p>
                       </div>
+                      ) : null}
+                      {slide.context.work ? (
                       <div>
                           <span className="text-xs md:text-sm uppercase tracking-widest text-secondary/50 font-bold block mb-2">Trabalho</span>
-                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-primary pl-4 text-secondary_fixed">{slide.context.work || "-"}</p>
+                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-primary pl-4 text-secondary_fixed">{slide.context.work}</p>
                       </div>
+                      ) : null}
+                      {slide.context.project ? (
                       <div>
                           <span className="text-xs md:text-sm uppercase tracking-widest text-secondary/50 font-bold block mb-2">Projetos</span>
-                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-white pl-4 text-on_surface font-semibold">{slide.context.project || "-"}</p>
+                          <p className="text-base md:text-lg lg:text-xl border-l-4 border-white pl-4 text-on_surface font-semibold">{slide.context.project}</p>
                       </div>
+                      ) : null}
                   </div>
-                  )}
+                  ) : null}
               </div>
 
               {/* Right side: Story & Bullets */}
