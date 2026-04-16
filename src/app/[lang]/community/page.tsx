@@ -1,5 +1,3 @@
-import BackButton from '@/components/ui/BackButton';
-
 export default async function CommunityPage({
   params,
 }: {
@@ -21,39 +19,45 @@ export default async function CommunityPage({
             {lang === 'pt' ? 'A Nossa Comunidade' : 'Our Community'}
           </h1>
           <p className="text-xl md:text-2xl font-light text-on_surface_variant leading-relaxed">
-            {lang === 'pt' 
-              ? 'Mais que uma rede de contatos. Um hub dinâmico de troca de conhecimento, construção de produtos e crescimento contínuo.' 
-              : 'More than a network. A dynamic hub for knowledge sharing, product building, and continuous growth.'}
+            {lang === 'pt'
+              ? 'Meetups, grupos no Discord e WhatsApp, Join Community e presença em eventos como Campus Party Goiás — conectando desenvolvedores e parceiros em Goiás e além.'
+              : 'Meetups, Discord and WhatsApp groups, Join Community, and stages at events like Campus Party Goiás — connecting developers and partners in Goiás and beyond.'}
           </p>
         </div>
 
         {/* Stats Section */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
           <div className="bg-surface_container_low/40 backdrop-blur-md p-8 rounded-[2rem] border border-outline_variant/10 shadow-ambient text-center flex flex-col justify-center items-center hover:-translate-y-2 transition-transform duration-300">
-            <span className="text-5xl md:text-6xl font-display font-bold text-primary mb-3">5K+</span>
-            <span className="text-xs md:text-sm font-sans uppercase tracking-widest text-secondary font-bold">
-              {lang === 'pt' ? 'Membros Ativos' : 'Active Members'}
+            <span className="text-5xl md:text-6xl font-display font-bold text-primary mb-3">1100+</span>
+            <span className="text-xs md:text-sm font-sans uppercase tracking-widest text-secondary font-bold leading-snug">
+              {lang === 'pt' ? 'Membros ativos' : 'Active members'}
             </span>
           </div>
           <div className="bg-surface_container_low/40 backdrop-blur-md p-8 rounded-[2rem] border border-outline_variant/10 shadow-ambient text-center flex flex-col justify-center items-center hover:-translate-y-2 transition-transform duration-300">
-            <span className="text-5xl md:text-6xl font-display font-bold text-tertiary mb-3">40+</span>
-            <span className="text-xs md:text-sm font-sans uppercase tracking-widest text-secondary font-bold">
-              {lang === 'pt' ? 'Encontros' : 'Hosted Events'}
+            <span className="text-5xl md:text-6xl font-display font-bold text-tertiary mb-3">20+</span>
+            <span className="text-xs md:text-sm font-sans uppercase tracking-widest text-secondary font-bold leading-snug">
+              {lang === 'pt' ? 'Meetups' : 'Meetups'}
             </span>
           </div>
           <div className="bg-surface_container_low/40 backdrop-blur-md p-8 rounded-[2rem] border border-outline_variant/10 shadow-ambient text-center flex flex-col justify-center items-center hover:-translate-y-2 transition-transform duration-300">
-            <span className="text-5xl md:text-6xl font-display font-bold text-primary mb-3">100+</span>
-            <span className="text-xs md:text-sm font-sans uppercase tracking-widest text-secondary font-bold">
-              {lang === 'pt' ? 'Projetos Gêmeos' : 'Twin Projects'}
+            <span className="text-5xl md:text-6xl font-display font-bold text-primary mb-3">2018</span>
+            <span className="text-xs md:text-sm font-sans uppercase tracking-widest text-secondary font-bold leading-snug">
+              {lang === 'pt' ? 'Desde' : 'Since'}
             </span>
           </div>
           <div className="bg-surface_container_low/40 backdrop-blur-md p-8 rounded-[2rem] border border-outline_variant/10 shadow-ambient text-center flex flex-col justify-center items-center hover:-translate-y-2 transition-transform duration-300">
-            <span className="text-5xl md:text-6xl font-display font-bold text-tertiary mb-3">12</span>
-            <span className="text-xs md:text-sm font-sans uppercase tracking-widest text-secondary font-bold">
-              {lang === 'pt' ? 'Cidades Polo' : 'Hub Cities'}
+            <span className="text-4xl md:text-5xl font-display font-bold text-tertiary mb-3 leading-none">80–100</span>
+            <span className="text-xs md:text-sm font-sans uppercase tracking-widest text-secondary font-bold leading-snug">
+              {lang === 'pt' ? 'Média por meetup (2024)' : 'Avg. per meetup (2024)'}
             </span>
           </div>
         </div>
+
+        <p className="text-center text-on_surface_variant text-sm md:text-base max-w-2xl mx-auto -mt-8">
+          {lang === 'pt'
+            ? 'Parcerias e apoios: Hub Goiás, Sebrae, AUVP — e patrocínios em eventos como Campus Party e Join Community.'
+            : 'Partners and support: Hub Goiás, Sebrae, AUVP — plus sponsorships at events like Campus Party and Join Community.'}
+        </p>
 
         {/* Events Gallery */}
         <div className="space-y-16">

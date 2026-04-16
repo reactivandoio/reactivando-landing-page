@@ -11,25 +11,28 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (lang === 'en') {
     return {
-      title: 'Reactivando | The engine of innovation in society',
-      description: 'Fueling the next wave of tech innovation. Discover how Reactivando breaks the tech bubble, creating innovation ecosystems integrated with AI and disruptive methods.',
+      title: 'Reactivando | Tech community in Goiás',
+      description:
+        'We strengthen the technology ecosystem in Goiás through meetups, networking, and collaboration among developers. Active community since 2018.',
       openGraph: {
-        title: 'Reactivando | Kinetic Innovation',
-        description: 'Fueling the next wave of tech innovation across society.',
+        title: 'Reactivando | Tech community in Goiás',
+        description:
+          'Meetups, Join Community, Campus Party Goiás, and partnerships with Hub Goiás, Sebrae, and AUVP.',
         images: ['/presentation/slide-4.jpg'],
-      }
+      },
     };
   }
 
-  // Default to PT
   return {
-    title: 'Reactivando | O motor da inovação na sociedade',
-    description: 'Impulsionando a próxima onda de inovação tecnológica. Descubra como a Reactivando fura a bolha da tecnologia, criando ecossistemas de inovação.',
+    title: 'Reactivando | Comunidade de tecnologia em Goiás',
+    description:
+      'Fortalecemos o ecossistema de tecnologia em Goiás com eventos, networking e colaboração entre desenvolvedores. Mais de 1100 membros ativos e 20+ meetups.',
     openGraph: {
-      title: 'Reactivando | O motor da inovação',
-      description: 'Impulsionando a próxima onda de inovação tecnológica na sociedade.',
+      title: 'Reactivando | Comunidade de tecnologia em Goiás',
+      description:
+        'Meetups, Join Community, Campus Party Goiás e parcerias com Hub Goiás, Sebrae e AUVP.',
       images: ['/presentation/slide-4.jpg'],
-    }
+    },
   };
 }
 
@@ -63,23 +66,52 @@ export default async function Home({
                 <span className="text-xs font-sans uppercase tracking-[0.2em] text-secondary">{landing.hero_pill || 'The Kinetic Intelligence'}</span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[5.5rem] xl:text-[6rem] font-display font-extrabold leading-[1.05] tracking-tight text-on_surface text-balance">
-                {lang === 'pt' ? (
-                  <>Impulsionando a <span className="text-primary italic">Próxima</span> Onda de Inovação Tecnológica.</>
-                ) : (
-                  <>Fueling the <span className="text-primary italic">Next</span> Wave of Tech Innovation.</>
-                )}
+                {landing.hero_h1_before}
+                <span className="text-primary italic">{landing.hero_h1_highlight}</span>
+                {landing.hero_h1_after}
               </h1>
               <p className="text-lg lg:text-2xl text-on_surface_variant max-w-2xl leading-relaxed font-light">
                 {landing.hero_desc}
               </p>
               <div className="flex flex-wrap gap-4 pt-8">
-                <Link href={`/${lang}/apresentacoes`} className="px-8 py-4 bg-gradient-primary text-on_primary rounded-full text-lg font-bold shadow-ambient hover:-translate-y-1 transition-transform inline-block">
-                  {landing.explore_programs || 'Explore Programs'}
+                <Link href={`/${lang}/programs`} className="px-8 py-4 bg-gradient-primary text-on_primary rounded-full text-lg font-bold shadow-ambient hover:-translate-y-1 transition-transform inline-block">
+                  {landing.explore_programs}
                 </Link>
-                <Link href={`/${lang}/manifesto`} className="px-8 py-4 bg-surface_container_highest/50 backdrop-blur-md border border-primary/20 rounded-full text-lg font-bold text-on_surface hover:bg-surface_container_high transition-colors inline-block">
-                  {landing.our_manifesto || 'Our Manifesto'}
+                <Link href={`/${lang}/charter`} className="px-8 py-4 bg-surface_container_highest/50 backdrop-blur-md border border-primary/20 rounded-full text-lg font-bold text-on_surface hover:bg-surface_container_high transition-colors inline-block">
+                  {landing.our_manifesto}
                 </Link>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats */}
+        <section className="py-16 md:py-20 px-8 border-y border-outline_variant/10 bg-surface_container_lowest/50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <span className="text-tertiary font-sans uppercase tracking-widest text-xs font-bold">{landing.stats_pill}</span>
+              <h2 className="text-2xl md:text-3xl font-display font-bold mt-3 text-on_surface">{landing.stats_title}</h2>
+            </div>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {[
+                { value: landing.stat_members_value, label: landing.stat_members_label },
+                { value: landing.stat_meetups_value, label: landing.stat_meetups_label },
+                { value: landing.stat_since_value, label: landing.stat_since_label },
+                { value: landing.stat_avg_value, label: landing.stat_avg_label },
+              ].map((s) => (
+                <div
+                  key={s.label}
+                  className="rounded-2xl border border-outline_variant/10 bg-surface_container_low p-6 md:p-8 text-center"
+                >
+                  <p className="text-3xl md:text-4xl font-display font-bold text-primary mb-2">{s.value}</p>
+                  <p className="text-xs md:text-sm font-sans uppercase tracking-wider text-secondary font-semibold leading-snug">{s.label}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-12 max-w-3xl mx-auto text-center">
+              <span className="text-tertiary font-sans uppercase tracking-widest text-xs font-bold">{landing.partners_pill}</span>
+              <h3 className="text-lg font-display font-semibold text-on_surface mt-2 mb-2">{landing.partners_title}</h3>
+              <p className="text-on_surface_variant text-sm md:text-base leading-relaxed">{landing.partners_desc}</p>
             </div>
           </div>
         </section>
@@ -87,24 +119,38 @@ export default async function Home({
         {/* Our Evolution */}
         <section className="py-24 bg-surface_container_lowest">
           <div className="max-w-7xl mx-auto px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
               <div>
-                <span className="text-tertiary font-sans uppercase tracking-widest text-sm font-bold">{landing.evolution_pill || 'Our Evolution'}</span>
-                <h2 className="text-4xl md:text-5xl font-display font-extrabold mt-4 mb-8 text-on_surface">{landing.evolution_title || 'From React Masters to Global Innovators.'}</h2>
+                <span className="text-tertiary font-sans uppercase tracking-widest text-sm font-bold">{landing.evolution_pill}</span>
+                <h2 className="text-4xl md:text-5xl font-display font-extrabold mt-4 mb-8 text-on_surface">{landing.evolution_title}</h2>
                 <div className="space-y-6 text-on_surface_variant text-lg leading-relaxed">
                   <p>{landing.evolution_desc1}</p>
                   <p dangerouslySetInnerHTML={{ __html: landing.evolution_desc2.replace('Reactivando', '<span class="text-primary font-bold">Reactivando</span>') }}></p>
                 </div>
+                <div className="mt-10 p-8 rounded-2xl border border-primary/15 bg-surface_container_high/30">
+                  <span className="text-primary font-sans uppercase tracking-widest text-xs font-bold">{landing.expansion_pill}</span>
+                  <h3 className="text-xl font-display font-bold text-on_surface mt-2 mb-2">{landing.expansion_title}</h3>
+                  <p className="text-on_surface_variant leading-relaxed">{landing.expansion_desc}</p>
+                </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="h-64 bg-surface_container_high rounded-2xl p-6 flex flex-col justify-end border border-outline_variant/10">
-                  <span className="text-4xl font-display font-bold text-primary">2021</span>
-                  <p className="text-sm text-secondary uppercase tracking-tighter font-bold">React Focus</p>
-                </div>
-                <div className="h-64 bg-surface_container_highest rounded-2xl p-6 flex flex-col justify-end border border-primary/20 mt-8">
-                  <span className="text-4xl font-display font-bold text-tertiary">2024</span>
-                  <p className="text-sm text-secondary uppercase tracking-tighter font-bold">Kinetic Innovation</p>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { year: landing.timeline_2018_year, tag: landing.timeline_2018_tag, desc: landing.timeline_2018_desc },
+                  { year: landing.timeline_2019_year, tag: landing.timeline_2019_tag, desc: landing.timeline_2019_desc },
+                  { year: landing.timeline_2020_year, tag: landing.timeline_2020_tag, desc: landing.timeline_2020_desc },
+                  { year: landing.timeline_2023_year, tag: landing.timeline_2023_tag, desc: landing.timeline_2023_desc },
+                ].map((t, i) => (
+                  <div
+                    key={t.year}
+                    className={`rounded-2xl p-6 border flex flex-col justify-end min-h-[160px] ${
+                      i % 2 === 1 ? 'bg-surface_container_highest border-primary/20 sm:mt-6' : 'bg-surface_container_high border-outline_variant/10'
+                    }`}
+                  >
+                    <span className="text-2xl md:text-3xl font-display font-bold text-primary">{t.year}</span>
+                    <p className="text-xs text-tertiary uppercase tracking-wider font-bold mt-1">{t.tag}</p>
+                    <p className="text-sm text-on_surface_variant mt-3 leading-relaxed">{t.desc}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

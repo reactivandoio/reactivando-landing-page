@@ -16,9 +16,10 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://reactivando.io'),
   title: {
     template: '%s | Reactivando',
-    default: 'Reactivando | O motor da inovação na sociedade',
+    default: 'Reactivando | Comunidade de tecnologia em Goiás',
   },
-  description: 'Descubra como a Reactivando fura a bolha da tecnologia, criando ecossistemas de inovação integrados com inteligência artificial e metodologias disruptivas.',
+  description:
+    'Comunidade de tecnologia em Goiás desde 2018: meetups, networking, Join Community, Campus Party Goiás e parcerias com Hub Goiás, Sebrae e AUVP.',
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Reactivando | O motor da inovação na sociedade',
-    description: 'Descubra como a Reactivando fura a bolha da tecnologia, criando ecossistemas de inovação.',
+    description:
+      'Fortalecemos o ecossistema de tecnologia em Goiás com eventos, networking e colaboração entre desenvolvedores.',
   },
   robots: {
     index: true,
