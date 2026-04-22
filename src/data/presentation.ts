@@ -906,21 +906,35 @@ export const escolherCarreiraSlides: PresentationSlide[] = [
   {
     id: 10,
     type: 'closing',
-    image: '/presentation/slide-13.jpg',
-    title: "Você não precisa ter todas as respostas agora",
-    period: "Fechamento",
-    highlight: "A Verdade",
+    image: '/presentation/slide-12.jpg',
+    title: "O que você aprendeu hoje",
+    period: "Recapitulando",
+    highlight: "As 4 Chaves",
     content: {
-      headline: "O futuro não é decidido em um momento.",
-      story: "Ele é construído nas pequenas decisões do dia a dia. Cada teste, cada conversa, cada projeto te leva mais perto de quem você vai se tornar.",
-      insight: "Comece antes de estar pronto.",
-      nextStep: "A carreira dos seus sonhos não vai aparecer num papel — ela vai aparecer enquanto você estiver em movimento."
+      headline: "Você não precisa ter todas as respostas.",
+      story: "Mas agora você tem 4 chaves que a maioria dos adultos demorou anos pra descobrir.",
+      insight: "Teste ao invés de decidir.",
+      nextStep: "Siga a curiosidade, aprenda habilidades valiosas e ande com quem está fazendo."
     },
     lessons: [
       "Ninguém acerta de primeira — e tá tudo bem",
       "Curiosidade vale mais que certeza",
       "O ambiente certo muda tudo"
     ],
+    keyword: "RECAPITULANDO",
+    presentationHint: "Slide de consolidação. Pausar em cada lição. Deixar a plateia absorver."
+  },
+  {
+    id: 11,
+    type: 'closing',
+    image: '/presentation/slide-13.jpg',
+    title: "Você não precisa ter todas as respostas agora",
+    period: "Fechamento",
+    highlight: "A Verdade",
+    content: {
+      headline: "O futuro não é decidido em um momento.",
+      story: "Ele é construído nas pequenas decisões do dia a dia. Cada teste, cada conversa, cada projeto te leva mais perto de quem você vai se tornar."
+    },
     finalQuote: "O mundo não espera quem tá pronto. O mundo é de quem começa.",
     keyword: "COMECE",
     presentationHint: "Impacto emocional máximo. A frase final deve explodir na tela. Foco total nos olhos da plateia antes de revelar."
