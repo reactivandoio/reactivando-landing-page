@@ -753,10 +753,10 @@ export const escolherCarreiraSlides: PresentationSlide[] = [
     period: "Abertura",
     speech: "Relaxa… a maioria dos adultos também não sabe.",
     bullets: [
-      "Levanta a mão quem sabe exatamente o que quer fazer pro resto da vida",
-      "Poucas mãos? Normal.",
-      "A verdade é que quase ninguém tem certeza — e tá tudo bem",
-      "Hoje a gente vai conversar sobre isso sem pressão"
+      "70% dos adultos trabalham fora da área que estudaram",
+      "Não existe 'escolha certa' — existe movimento",
+      "Tá perdido? Isso é mais normal do que parece",
+      "Hoje a gente vai falar sobre como sair do lugar sem ter todas as respostas"
     ],
     keyword: "QUEBRA DE PADRÃO",
     presentationHint: "Slide provocativo. A pergunta deve dominar a tela com tipografia gigante. Criar conexão imediata com a plateia."
