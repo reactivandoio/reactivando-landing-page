@@ -80,6 +80,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
 
   const slide = slides[currentSlide];
   const progress = ((currentSlide + 1) / slides.length) * 100;
+  const imgOpacity = slide.imageOpacity ?? 15;
 
   return (
     <div className="min-h-screen w-full bg-background text-on_background flex flex-col relative overflow-hidden">
@@ -151,8 +152,8 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
         <div className="flex-grow flex flex-col items-center justify-center p-4 md:p-6 pb-20 z-10 w-full relative max-h-[100dvh] overflow-hidden">
            {slide.image && (
              <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none transition-opacity duration-1000">
-               <img src={slide.image} alt={slide.title} className="w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105" />
-               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/50" />
+               <img src={slide.image} alt={slide.title} className="w-full h-full object-cover opacity-20 mix-blend-luminosity scale-105" style={slide.imageOpacity ? { opacity: slide.imageOpacity / 100 } : undefined} />
+               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/95 to-background/40" />
              </div>
            )}
 
@@ -223,7 +224,7 @@ export default function PresentationPlayer({ slides, conclusion }: { slides: Pre
            {/* IMAGE BACKGROUND */}
            {slide.image && (
              <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none transition-opacity duration-1000">
-               <img src={slide.image} alt={slide.title} className="w-full h-full object-cover opacity-15 mix-blend-luminosity scale-105" />
+               <img src={slide.image} alt={slide.title} className="w-full h-full object-cover opacity-15 mix-blend-luminosity scale-105" style={slide.imageOpacity ? { opacity: slide.imageOpacity / 100 } : undefined} />
                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/90 to-background/40" />
              </div>
            )}

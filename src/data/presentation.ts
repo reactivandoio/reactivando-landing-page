@@ -8,6 +8,7 @@ export type PresentationSlide = {
   id: number;
   type?: 'intro' | 'timeline' | 'closing';
   image?: string;
+  imageOpacity?: number;
   title: string;
   period: string;
 
@@ -720,6 +721,218 @@ export const eventosComunidadeConclusion = {
   cta: "Nos vemos no próximo evento."
 };
 
+export const escolherCarreiraSlides: PresentationSlide[] = [
+  {
+    id: 0,
+    type: 'intro',
+    image: '/pedro.JPG',
+    title: "Pedro Goiânia",
+    period: "Apresentação",
+    context: {
+      university: "Dev há >10 anos",
+      work: "Fundador & Builder",
+      project: "Comunidades & Startups"
+    },
+    speech: "Eu não escolhi uma carreira. Eu fui construindo uma, um passo de cada vez.",
+    bullets: [
+      "Pedro Goiânia",
+      "Desenvolvedor de software há mais de 10 anos",
+      "Especialista em produtos digitais e fintechs",
+      "Vencedor de 3 hackathons (incluindo Uber)",
+      "Organizador de comunidades e eventos de tecnologia",
+      "Criador de startups e produtos digitais"
+    ],
+    keyword: "QUEM SOU EU",
+    social: "Instagram/LinkedIn/GitHub: @pedrogoiania",
+    presentationHint: "Fundo escuro moderno, tipografia grande e impactante, com a foto dominando o lado esquerdo."
+  },
+  {
+    id: 1,
+    image: '/presentation/slide-1.jpg',
+    title: "Quem aqui já sabe o que quer ser?",
+    period: "Abertura",
+    speech: "Relaxa… a maioria dos adultos também não sabe.",
+    bullets: [
+      "Levanta a mão quem sabe exatamente o que quer fazer pro resto da vida",
+      "Poucas mãos? Normal.",
+      "A verdade é que quase ninguém tem certeza — e tá tudo bem",
+      "Hoje a gente vai conversar sobre isso sem pressão"
+    ],
+    keyword: "QUEBRA DE PADRÃO",
+    presentationHint: "Slide provocativo. A pergunta deve dominar a tela com tipografia gigante. Criar conexão imediata com a plateia."
+  },
+  {
+    id: 2,
+    image: '/startup-1-m-thumb.jpeg',
+    imageOpacity: 60,
+    title: "Eu vendia jujuba no farol",
+    period: "O Início Improvável",
+    context: {
+      university: "Sem noção do futuro",
+      work: "Vendendo doces",
+      project: "Sobrevivência"
+    },
+    speech: "Eu não tinha plano nenhum. Eu era um adolescente normal, sem rumo, sem direção. Mas já estava observando o mundo de um jeito diferente — eu só não sabia ainda.",
+    bullets: [
+      "Adolescência vendendo jujuba no farol de Goiânia",
+      "Nenhuma noção de empreendedorismo",
+      "Mas já observava comportamentos e oportunidades",
+      "A visão já existia ali — disfarçada de necessidade"
+    ],
+    learning: "Não subestime o que seus instintos de hoje estão te mostrando sobre amanhã.",
+    keyword: "ORIGEM",
+    presentationHint: "Visual cru e honesto. Foco na autenticidade da história. Mostrar que grandes jornadas começam nos lugares mais improváveis."
+  },
+  {
+    id: 3,
+    image: '/presentation/slide-2.jpg',
+    title: "Da curiosidade ao código",
+    period: "A Descoberta",
+    context: {
+      university: "IFG",
+      work: "Primeiros projetos",
+      project: "Hackathons"
+    },
+    speech: "Eu não tinha um plano. Eu só fui dando o próximo passo. Entrei pro IFG, descobri a tecnologia… e de repente, tudo mudou.",
+    bullets: [
+      "Entrei pro IFG sem saber o que ia acontecer",
+      "Descobri código — e fiquei viciado",
+      "Comecei a participar de hackathons",
+      "Cada competição me mostrou quem eu poderia ser",
+      "A carreira começou sem eu perceber"
+    ],
+    learning: "A carreira não aparece de uma vez. Ela se revela conforme você se move.",
+    keyword: "DESCOBERTA",
+    presentationHint: "Energia de hackathon. Mostrar a transformação de 'perdido' pra 'em movimento'. Visual com código e troféus."
+  },
+  {
+    id: 4,
+    image: '/presentation/slide-3.jpg',
+    title: "A maior mentira sobre carreira",
+    period: "Quebrando Mitos",
+    speech: "Disseram pra gente que a gente precisa escolher uma carreira cedo… e acertar de primeira. Isso é mentira.",
+    bullets: [
+      "O mundo mudou — carreiras não são mais lineares",
+      "Seus pais escolheram UMA profissão. Você pode ter várias.",
+      "De jujuba no farol → desenvolvedor → líder de engenharia → founder",
+      "Você pode mudar quantas vezes precisar",
+      "A única coisa errada é ficar parado"
+    ],
+    keyword: "MITO QUEBRADO",
+    presentationHint: "Impacto visual forte. A frase 'Isso é mentira' deve marcar o slide com tipografia pesada e contrastante."
+  },
+  {
+    id: 5,
+    image: '/presentation/slide-5.jpg',
+    title: "Testar ao invés de decidir",
+    period: "Como Escolher #1",
+    speech: "Você não descobre pensando. Você descobre fazendo.",
+    bullets: [
+      "Faça um projeto — qualquer um. Mesmo pequeno.",
+      "Participe de um evento. Hackathon, meetup, palestra.",
+      "Tente coisas diferentes sem medo de errar",
+      "Cada teste te elimina uma dúvida",
+      "Decisão boa vem depois da experiência, não antes"
+    ],
+    learning: "Toda vez que você testa algo, você descobre mais sobre você mesmo.",
+    keyword: "TESTE",
+    presentationHint: "Visual prático e dinâmico. Foco em ação. Ícones de projeto, evento, código."
+  },
+  {
+    id: 6,
+    image: '/presentation/slide-7.jpg',
+    title: "Siga a curiosidade, não a pressão",
+    period: "Como Escolher #2",
+    speech: "O que você assiste no YouTube sem ninguém mandar? O que você pesquisa sozinho às 2h da manhã? Ali mora a resposta.",
+    bullets: [
+      "O que você gosta de ver no YouTube por diversão?",
+      "O que você pesquisa sozinho, sem ninguém pedir?",
+      "Que tipo de conteúdo te prende por horas?",
+      "A curiosidade genuína é o GPS mais confiável",
+      "Pressão dos outros te leva pro caminho errado"
+    ],
+    keyword: "CURIOSIDADE",
+    presentationHint: "Visual leve e inspirador. Mostrar a ideia de GPS interior. Cores que transmitem descoberta e exploração."
+  },
+  {
+    id: 7,
+    image: '/presentation/slide-4.jpg',
+    title: "Aprenda habilidades que valem em qualquer lugar",
+    period: "Como Escolher #3",
+    speech: "Independente da área que você escolher, tem habilidades que te colocam na frente em qualquer jogo.",
+    bullets: [
+      "Comunicação — saber se expressar abre todas as portas",
+      "Tecnologia — o mundo inteiro roda em código",
+      "Resolver problemas — empresas pagam por isso",
+      "Trabalhar em equipe — ninguém cresce sozinho",
+      "Essas servem pra medicina, direito, tech, design, tudo."
+    ],
+    keyword: "HABILIDADES",
+    presentationHint: "Arsenal de habilidades. Visual tipo inventário de RPG — cada habilidade como um poder desbloqueável."
+  },
+  {
+    id: 8,
+    image: '/meetup-16-04.jpeg',
+    title: "Ande com gente que está fazendo",
+    period: "Como Escolher #4",
+    speech: "O ambiente que você está define até onde você vai.",
+    bullets: [
+      "Vá a eventos (como esse que você está agora)",
+      "Entre em comunidades da área que te interessa",
+      "Participe de hackathons — o nível sobe absurdamente",
+      "Converse com pessoas que já estão no caminho",
+      "Você se torna a média das 5 pessoas ao seu redor"
+    ],
+    learning: "As pessoas certas aceleram 10 anos da sua evolução.",
+    keyword: "AMBIENTE",
+    presentationHint: "Foto real de comunidade/meetup. Foco na energia coletiva. Pessoas reais fazendo coisas reais."
+  },
+  {
+    id: 9,
+    image: '/presentation/slide-9.jpg',
+    title: "O que você pode fazer AGORA",
+    period: "Ação Imediata",
+    speech: "Não espera acabar o ensino médio. Não espera a faculdade. Começa hoje.",
+    bullets: [
+      "Crie um projeto simples — um app, um site, uma ideia",
+      "Participe de um hackathon (mesmo sem saber nada)",
+      "Aprenda algo online — YouTube tem conteúdo de graça",
+      "Converse com alguém que trabalha na área que te interessa",
+      "Entre numa comunidade tech (tipo o Reactivando)"
+    ],
+    keyword: "COMECE HOJE",
+    presentationHint: "Slide de ação. Visual urgente mas acolhedor. Checklist visual com cada item brilhando conforme aparece."
+  },
+  {
+    id: 10,
+    type: 'closing',
+    image: '/presentation/slide-13.jpg',
+    title: "Você não precisa ter todas as respostas agora",
+    period: "Fechamento",
+    highlight: "A Verdade",
+    content: {
+      headline: "O futuro não é decidido em um momento.",
+      story: "Ele é construído nas pequenas decisões do dia a dia. Cada teste, cada conversa, cada projeto te leva mais perto de quem você vai se tornar.",
+      insight: "Comece antes de estar pronto.",
+      nextStep: "A carreira dos seus sonhos não vai aparecer num papel — ela vai aparecer enquanto você estiver em movimento."
+    },
+    lessons: [
+      "Ninguém acerta de primeira — e tá tudo bem",
+      "Curiosidade vale mais que certeza",
+      "O ambiente certo muda tudo"
+    ],
+    finalQuote: "O mundo não espera quem tá pronto. O mundo é de quem começa.",
+    keyword: "COMECE",
+    presentationHint: "Impacto emocional máximo. A frase final deve explodir na tela. Foco total nos olhos da plateia antes de revelar."
+  }
+];
+
+export const escolherCarreiraConclusion = {
+  image: '/presentation/conclusion.jpg',
+  quote: "O mundo não espera quem tá pronto. O mundo é de quem começa.",
+  cta: "Seu próximo passo começa agora."
+};
+
 export const presentationsRegistry: Record<string, { title: string, description: string, thumbnail?: string, slides: PresentationSlide[], conclusion: any }> = {
   "minha-jornada": {
     title: "De Desenvolvedor a Founder",
@@ -748,6 +961,12 @@ export const presentationsRegistry: Record<string, { title: string, description:
     thumbnail: "/meetup-16-04.jpeg",
     slides: eventosComunidadeSlides,
     conclusion: eventosComunidadeConclusion
+  },
+  "escolher-carreira": {
+    title: "Como Escolher Carreira Sem Ficar Perdido",
+    description: "Você não precisa ter todas as respostas agora. Uma palestra para adolescentes sobre como descobrir seu caminho testando, errando e começando — sem pressão.",
+    thumbnail: "/pedro.JPG",
+    slides: escolherCarreiraSlides,
+    conclusion: escolherCarreiraConclusion
   }
 };
-
