@@ -1,3 +1,8 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+
 export default function MobileStickyCTA({
   label,
   targetId = 'waitlist',
@@ -5,7 +10,13 @@ export default function MobileStickyCTA({
   label: string;
   targetId?: string;
 }) {
-  return (
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const button = (
     <a
       href={`#${targetId}`}
       className="lg:hidden inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-on_primary rounded-full font-display font-bold text-sm uppercase tracking-wider active:scale-95 transition-transform"
@@ -23,4 +34,7 @@ export default function MobileStickyCTA({
       <span className="material-symbols-outlined text-lg">arrow_forward</span>
     </a>
   );
+
+  if (!mounted) return null;
+  return createPortal(button, document.body);
 }
