@@ -49,7 +49,7 @@ export default async function Home({
         {/* Reactivando Day announcement */}
         <Link
           href={`/${lang}/reactivando-day`}
-          className="group block border-y border-primary/30 bg-primary/[0.08] hover:bg-primary/[0.14] transition-colors"
+          className="group block mt-0 md:mt-24 border-y border-primary/30 bg-primary/[0.08] hover:bg-primary/[0.14] transition-colors relative z-30"
         >
           <div className="max-w-7xl mx-auto px-6 md:px-8 py-3 md:py-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
             <span className="inline-flex items-center gap-2">
