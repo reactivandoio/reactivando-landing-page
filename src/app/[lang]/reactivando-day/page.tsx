@@ -393,7 +393,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[820px] h-[820px] bg-primary_container/20 rounded-full blur-[120px] opacity-60 rd-glow-pulse" />
             <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-tertiary/10 rounded-full blur-[100px] opacity-50" />
           </div>
-          <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-24 md:py-32 text-center flex flex-col items-center gap-8">
+          <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 py-14 md:py-32 text-center flex flex-col items-center gap-8">
             <div className="rd-fade-up inline-flex items-center gap-2 bg-surface_container px-4 py-2 rounded-full border border-outline_variant/30 text-primary uppercase text-xs md:text-sm tracking-wider font-sans font-semibold">
               <span className="material-symbols-outlined text-base">calendar_today</span>
               {t.pill}
@@ -438,7 +438,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
           id="sobre"
           className="border-y border-outline_variant/10 bg-surface_container_low/40"
         >
-          <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="space-y-5 rd-fade-up">
               <span className="text-xs uppercase tracking-[0.3em] text-tertiary font-bold">
                 {t.pos_eyebrow}
@@ -467,7 +467,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
         </section>
 
         {/* ── PARA QUEM ───────────────────────────────────────── */}
-        <section className="max-w-5xl mx-auto px-6 md:px-12 py-24 md:py-32">
+        <section className="max-w-5xl mx-auto px-6 md:px-12 py-14 md:py-32">
           <div className="text-center mb-12 space-y-3 rd-fade-up">
             <h2 className="text-3xl md:text-5xl font-display font-extrabold text-on_surface text-balance">
               {t.aud_title}
@@ -497,7 +497,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
 
         {/* ── POR QUE PARTICIPAR (bento) ──────────────────────── */}
         <section className="border-y border-outline_variant/10 bg-surface_container_low/40">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 space-y-14">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-32 space-y-14">
             <div className="text-center max-w-2xl mx-auto space-y-3">
               <h2 className="text-3xl md:text-5xl font-display font-extrabold text-on_surface text-balance">
                 {t.why_title}
@@ -559,7 +559,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
         {/* ── PROGRAMACAO ─────────────────────────────────────── */}
         <section
           id="programacao"
-          className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 space-y-16"
+          className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-32 space-y-16"
         >
           <div className="max-w-3xl space-y-3 rd-fade-up">
             <h2 className="text-3xl md:text-5xl font-display font-extrabold text-on_surface tracking-tight text-balance">
@@ -610,7 +610,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
           id="hackathon"
           className="border-y border-outline_variant/10 bg-surface_container_low/40"
         >
-          <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="relative aspect-[4/5] md:aspect-square rounded-3xl overflow-hidden border border-primary/30 bg-surface_container shadow-ambient rd-tilt md:order-1 order-2 group">
               <img
                 src="/hackathon-photo.jpg"
@@ -643,7 +643,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
         </section>
 
         {/* ── COMUNIDADE ──────────────────────────────────────── */}
-        <section id="comunidade" className="px-6 md:px-12 py-24 md:py-32">
+        <section id="comunidade" className="px-6 md:px-12 py-14 md:py-32">
           <div className="max-w-4xl mx-auto text-center space-y-8 rd-fade-up">
             <span className="text-xs uppercase tracking-[0.3em] text-tertiary font-bold">
               {t.com_eyebrow}
@@ -675,7 +675,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
 
         {/* ── PARCERIA AUVP ───────────────────────────────────── */}
         <section className="border-y border-outline_variant/10 bg-surface_container_low/40">
-          <div className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="flex justify-center md:justify-start order-2 md:order-1">
               <img
                 src="/auvp-vertical.png"
@@ -730,7 +730,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[100px]" />
           </div>
-          <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <div className="relative max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-32 grid md:grid-cols-2 gap-12 md:gap-16 items-center">
             <div className="space-y-6 rd-fade-up">
               <h2 className="font-display font-extrabold tracking-tight text-on_surface text-3xl md:text-5xl text-balance leading-tight">
                 {t.form_title}
@@ -774,7 +774,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
         {/* ── LOCALIZACAO ─────────────────────────────────────── */}
         <section
           id="localizacao"
-          className="max-w-7xl mx-auto px-6 md:px-12 py-24 md:py-32 space-y-8"
+          className="max-w-7xl mx-auto px-6 md:px-12 py-14 md:py-32 space-y-8"
         >
           <div className="space-y-3 max-w-3xl">
             <span className="text-xs uppercase tracking-[0.3em] text-secondary font-bold">
