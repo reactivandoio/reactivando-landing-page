@@ -7,20 +7,7 @@ type Props = {
   params: Promise<{ lang: string }>;
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { lang } = await params;
-  if (lang === 'en') {
-    return {
-      title: 'Reactivando Day by AUVP | Save the date',
-      description:
-        'A full day to build, learn and connect with the people making tech happen in Goiás. Hackathon, keynotes, awards and happy hour — all in one day at Hub Goiás.',
-      openGraph: {
-        title: 'Reactivando Day by AUVP | Save the date',
-        description:
-          'Hackathon, keynotes, awards and happy hour on July 4th at Hub Goiás. Join the waitlist.',
-      },
-    };
-  }
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Reactivando Day by AUVP | Save the date',
     description:
@@ -185,161 +172,11 @@ const COPY = {
     presents: '× apresenta ×',
     footer_copy: '© 2026 Reactivando Day by AUVP. Tecnologia e comunidade em Goiânia.',
   },
-  en: {
-    nav_about: 'About',
-    nav_program: 'Schedule',
-    nav_hackathon: 'Hackathon',
-    nav_community: 'Community',
-    nav_location: 'Location',
-    nav_cta: 'Waitlist',
-    nav_cta_short: 'List',
-
-    pill: 'July 4th · 9 AM – 9 PM · Hub Goiás',
-    title_lead: 'Reactivando',
-    title_accent: 'Day',
-    by: 'by AUVP',
-    hero_subtitle:
-      'A full day to build, learn and connect at the intersection of tech and the financial market — with the people making tech happen in Goiás.',
-    hero_support:
-      'Hackathon, keynotes from big names in the field, awards and happy hour.\nAll in one day.\nAll in one place.',
-    cta_primary: 'Join the waitlist',
-    cta_micro:
-      'Spots will be limited. The waitlist gets first notice on registration, schedule and guests.',
-
-    pos_eyebrow: 'About the event',
-    pos_title: 'Not just a tech event',
-    pos_p1:
-      'Most events start and end the same way: you watch a few talks, take a photo, post on LinkedIn and leave like nothing happened.',
-    pos_p2: 'Reactivando Day was designed to be different.',
-    pos_p3:
-      'You will spend the day with people building, debating ideas, learning from folks who live the market and making connections with people who can stick with you after the event.',
-    pos_p4:
-      'More than that: joining a community that actually cares about you.',
-    pos_visual_label: 'Tech community · Goiás',
-
-    aud_title: 'Who this event is for',
-    aud_lines: [
-      'For people who want to get out of the audience.',
-      'For people who are unsure how to build something and want to get hands-on.',
-      'For students who want to see in practice how an idea leaves the page.',
-      'For devs who want to get closer to people living the market.',
-      'For designers, PMs, founders and curious minds who want to see how an idea becomes a solution.',
-      'And for anyone who knows tech is not learned just watching YouTube.',
-    ],
-
-    why_title: 'Why join?',
-    why_desc:
-      'What makes Reactivando Day a worthwhile day for your career and your network.',
-    why_cards: [
-      {
-        icon: 'construction',
-        title: 'Build something real in a day',
-        desc:
-          'Not just sitting through talks for hours. Get hands-on and leave with a project. And if you do not feel like building, just show up and watch things happen — a crowd around all day, people swapping ideas and taking part.',
-      },
-      {
-        icon: 'school',
-        title: 'Learn from people in the market',
-        desc:
-          'Content from people who are working and living the market, going beyond the basics. Real conversation, not motivational keynotes.',
-      },
-      {
-        icon: 'groups',
-        title: 'Meet great people',
-        desc:
-          'Devs, designers, product, business — a real community of people who care about you, in the same room.',
-      },
-      {
-        icon: 'visibility',
-        title: 'Get visibility',
-        desc:
-          'Show your solution, show how you think and connect with people who can open doors. Your next job might be at this event.',
-      },
-    ],
-    cta_repeat: 'Join the waitlist',
-    cta_repeat_micro: 'Limited spots due to hackathon dynamics and venue capacity.',
-
-    schedule_title: 'The day in three moments',
-    schedule_desc: 'The hackathon runs across the whole day, but each part has its own focus.',
-    act1_time: 'Morning',
-    act1_title: 'Hackathon kicks off',
-    act1_desc:
-      'Breakfast, team formation, challenge briefing (financial market), lightning talks for context and the start of the build. This is where the idea leaves the slide deck and starts becoming something.',
-    act2_time: 'Afternoon',
-    act2_title: 'Content with people from the market',
-    act2_desc:
-      'Lunch together and keynotes at the intersection of tech and the financial market. Professionals living both worlds, talking product, AI, building, career and what changes when the problem is real people’s money. No motivational talks.',
-    act3_time: 'Evening',
-    act3_title: 'Delivery, awards and happy hour',
-    act3_desc:
-      'Project wrap-up, team presentations, awards and a happy hour with draft beer to close the day. Because good networking does not happen on a form. It happens in conversation.',
-
-    hack_eyebrow: 'Hackathon · Financial market',
-    hack_title: 'You do not need to show up with a ready-made idea',
-    hack_p1: 'The hackathon will be guided and the theme is the financial market.',
-    hack_p2:
-      'Teams will receive a real challenge from the investing world — coming from AUVP, the largest investment school in Brazil — form groups, get mentorship and build a solution through the day.',
-    hack_p3: 'Winning is not the only point.',
-    hack_p4:
-      'It is about stress-testing what you know, learning fast, working in a team and showing how you think when the problem is real. You do not need to be from finance — you need to want to understand it.',
-    hack_visual_label: 'Real teams, real problem',
-
-    com_eyebrow: 'Community',
-    com_title: 'You are not just joining an event.\nYou are joining a community.',
-    com_p1: 'Reactivando was born to bring people closer to tech in Goiás.',
-    com_p2:
-      'This event is another piece of that: putting students, professionals, companies, communities and partners in a room where things can actually happen.',
-    com_bullets: [
-      'A conversation can become a job.',
-      'A team can become a project.',
-      'An idea can become something bigger.',
-    ],
-    com_final: 'But only if you show up.',
-
-    partner_label: 'Co-hosted by',
-    partner_title: 'Reactivando Day by AUVP',
-    partner_tagline: 'AUVP — the largest investment school in Brazil.',
-    partner_p1:
-      'Reactivando and AUVP joined forces for an event at the intersection of tech and the financial market. The whole day lives in that crossover: tech solving real investor problems.',
-    partner_p2:
-      'Reactivando puts the Goiás tech community in the room and runs the hackathon. AUVP brings the perspective of an organization teaching investing to thousands of people in Brazil — and the challenges come from that source. Two sides that complete each other, in one day.',
-
-    support_label: 'With support from',
-
-    form_title: 'Join the waitlist',
-    form_subtitle:
-      'Drop your name, email and WhatsApp to be first to hear about registration, confirmed guests and the next updates on Reactivando Day.',
-    form_benefits: [
-      'Priority notice on registration',
-      'Early access to schedule and guests',
-      'Updates straight to WhatsApp',
-    ],
-    name_label: 'Full name',
-    name_placeholder: 'How should we call you',
-    email_label: 'Email',
-    email_placeholder: 'you@email.com',
-    phone_label: 'WhatsApp',
-    phone_placeholder: '+55 62 9XXXX-XXXX',
-    submit: 'Join the waitlist',
-    submitting: 'Saving...',
-    success_title: 'You are on the list.',
-    success_desc:
-      'Now join the WhatsApp waitlist group to follow the next updates from Reactivando Day.',
-    whatsapp_cta: 'Join the waitlist group',
-    disclaimer:
-      'By joining the waitlist you agree to receive updates about Reactivando Day by email and WhatsApp.',
-
-    loc_eyebrow: 'Location',
-    how_to_get_there: 'How to get there',
-    open_in_maps: 'Open in Google Maps',
-    presents: '× presents ×',
-    footer_copy: '© 2026 Reactivando Day by AUVP. Tech and community in Goiânia.',
-  },
 };
 
 export default async function ReactivandoDayPage({ params }: Props) {
   const { lang } = await params;
-  const t = COPY[lang === 'en' ? 'en' : 'pt'];
+  const t = COPY.pt;
 
   const navLinks = [
     { href: '#sobre', label: t.nav_about },
