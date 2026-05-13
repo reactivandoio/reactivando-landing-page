@@ -811,21 +811,21 @@ export default async function ReactivandoDayPage({ params }: Props) {
       </main>
 
       {/* ── FOOTER ────────────────────────────────────────────── */}
-      <footer className="border-t border-outline_variant/10 bg-surface_container_lowest pb-24 md:pb-0">
+      <footer className="border-t border-outline_variant/10 bg-surface_container_lowest pb-32 md:pb-0">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-4 md:gap-6">
+          <div className="flex items-center gap-3 md:gap-6 flex-nowrap">
             <img
               src="/reactivando-horizontal.svg"
               alt="Reactivando"
-              className="h-7 md:h-8 w-auto"
+              className="h-6 md:h-8 w-auto shrink-0"
             />
-            <span className="text-on_surface_variant text-[0.7rem] md:text-xs uppercase tracking-[0.4em]">
+            <span className="text-on_surface_variant text-[0.6rem] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.4em] whitespace-nowrap">
               {t.presents}
             </span>
             <img
               src="/auvp-horizontal.png"
               alt="AUVP"
-              className="h-7 md:h-8 w-auto"
+              className="h-6 md:h-8 w-auto shrink-0"
             />
           </div>
           <p className="text-on_surface_variant/80 text-sm text-center md:text-right">
