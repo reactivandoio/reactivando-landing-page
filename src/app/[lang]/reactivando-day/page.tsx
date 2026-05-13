@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import WaitlistForm from './WaitlistForm';
+import MobileStickyCTA from './MobileStickyCTA';
 
 type Props = {
   params: Promise<{ lang: string }>;
@@ -810,7 +811,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
       </main>
 
       {/* ── FOOTER ────────────────────────────────────────────── */}
-      <footer className="border-t border-outline_variant/10 bg-surface_container_lowest">
+      <footer className="border-t border-outline_variant/10 bg-surface_container_lowest pb-24 md:pb-0">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4 md:gap-6">
             <img
@@ -832,6 +833,10 @@ export default async function ReactivandoDayPage({ params }: Props) {
           </p>
         </div>
       </footer>
+
+      {/* Mobile-only sticky CTA */}
+      <MobileStickyCTA label={t.cta_primary} />
+
     </div>
   );
 }
