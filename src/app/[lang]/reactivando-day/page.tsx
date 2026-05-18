@@ -187,7 +187,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
   ];
 
   return (
-    <div className="relative bg-background text-on_background min-h-screen flex flex-col">
+    <div className="relative bg-background text-on_background min-h-screen flex flex-col overflow-x-hidden">
       {/* Top app bar */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-outline_variant/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-12 py-3 md:py-4">
@@ -562,7 +562,7 @@ export default async function ReactivandoDayPage({ params }: Props) {
         {/* ── WAITLIST FORM ───────────────────────────────────── */}
         <section
           id="waitlist"
-          className="relative border-y border-outline_variant/10 bg-surface_container_low/40 scroll-mt-20"
+          className="relative overflow-hidden border-y border-outline_variant/10 bg-surface_container_low/40 scroll-mt-20"
         >
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-primary/5 rounded-full blur-[100px]" />
